@@ -53,5 +53,5 @@ Object detection project to detect smoke caused by wildfire
    Example:
 
    ```bash
-   docker run -v $(pwd)/data/test/images:/app/data/test/images -v $(pwd)/output:/app/output smoke-detect python /app/script/inference.py /app/data/test/images --output /app/output --device cuda --weights /app/model/smoke-detect/weights/best.pt
+   docker run -v $(pwd)/data/test/images:/app/data/test/images -v $(pwd)/output:/app/output smoke-detect python3 /app/script/inference.py /app/data/test/images --output /app/output --device cuda --weights /app/model/smoke-detect/weights/best.pt
    ```
