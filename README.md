@@ -28,3 +28,30 @@ Object detection project to detect smoke caused by wildfire
    ```bash
    docker run -v $(pwd)/data/test/images:/app/data/test/images -v $(pwd)/output:/app/output smoke-detect python /app/script/inference.py /app/data/test/images --output /app/output --device cpu --weights /app/model/smoke-detect/weights/best.pt
    ```
+
+## How to Run with Docker using GPU
+
+1. Build docker image:
+
+   ```bash
+   docker build -t <image_name> -f Dockerfile.gpu .
+   ```
+
+   Example:
+
+   ```bash
+   docker build -t smoke-detect -f Dockerfile.gpu .
+   ```
+
+2. Run docker image:
+
+   ```bash
+   docker run -v $(pwd)/input_path:/app/input_path -v $(pwd)/output_path:/app/output_path <image_name> /app/script/inference.py /app/input_path --output /app/output_path --device cuda --weights /app/model_path
+
+   ```
+
+   Example:
+
+   ```bash
+   docker run -v $(pwd)/data/test/images:/app/data/test/images -v $(pwd)/output:/app/output smoke-detect python /app/script/inference.py /app/data/test/images --output /app/output --device cuda --weights /app/model/smoke-detect/weights/best.pt
+   ```
