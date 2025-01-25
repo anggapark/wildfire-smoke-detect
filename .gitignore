@@ -1,0 +1,7 @@
+*.pdf
+model/wildfire_detect/*
+!model/wildfire_detect/weights
+output
+data/train/*
+data/valid/*
+data/test/*
