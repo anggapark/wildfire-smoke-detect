@@ -16,7 +16,7 @@ def train_model(data, device, batch, epochs, img_size=640):
     # Define parameters
     # dataset_yaml = f"../data/data.yaml"
     project = f"model"
-    name = "wildfire_detect"
+    name = "smoke-detect"
     lr = 1e-3
     optimizer = "AdamW"
 
@@ -48,8 +48,6 @@ def train_model(data, device, batch, epochs, img_size=640):
 
 
 def main():
-
-    # Define Argument Parser
     parser = argparse.ArgumentParser(
         description="Train YOLOv11 model to detect wildfire smoke"
     )
