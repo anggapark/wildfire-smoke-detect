@@ -46,12 +46,12 @@ Object detection project to detect smoke caused by wildfire
 2. Run docker image:
 
    ```bash
-   docker run -v $(pwd)/input_path:/app/input_path -v $(pwd)/output_path:/app/output_path <image_name> /app/script/inference.py /app/input_path --output /app/output_path --device cuda --weights /app/model_path
+   docker run --gpus all -v $(pwd)/input_path:/app/input_path -v $(pwd)/output_path:/app/output_path <image_name> /app/script/inference.py /app/input_path --output /app/output_path --device 0 --weights /app/model_path
 
    ```
 
    Example:
 
    ```bash
-   docker run -v $(pwd)/data/test/images:/app/data/test/images -v $(pwd)/output:/app/output smoke-detect python3 /app/script/inference.py /app/data/test/images --output /app/output --device cuda --weights /app/model/smoke-detect/weights/best.pt
+   docker run --gpus all -v $(pwd)/data/test/images:/app/data/test/images -v $(pwd)/output:/app/output smoke-detect python3 /app/script/inference.py /app/data/test/images --output /app/output --device 0 --weights /app/model/smoke-detect/weights/best.pt
    ```
